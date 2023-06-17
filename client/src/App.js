@@ -13,7 +13,6 @@ import { themeSettings } from "./theme";
 
 // Pages
 import Layout from "./scenes/layout/index";
-import Home from "./scenes/home/index";
 import Login from "./scenes/login/index";
 import Profile from "./scenes/profile/index";
 import Document from "./scenes/document/index";
