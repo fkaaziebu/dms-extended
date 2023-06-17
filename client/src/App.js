@@ -74,7 +74,7 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={!isAuth ? <Login /> : <Navigate to="/profile" />} />
               <Route path="/login" element={<Login />} />
               <Route
                 path="profile"
