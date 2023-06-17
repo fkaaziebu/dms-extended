@@ -7,7 +7,7 @@ import vpassLogo from "../../assets/vpass-logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { setSuccessMessage, setErrorMessage, setProfile } from "../../state";
-import { useTheme } from "@mui/material";
+import { Divider, Typography, useTheme } from "@mui/material";
 
 function Login() {
   const dispatch = useDispatch();
@@ -56,24 +56,26 @@ function Login() {
       dispatch(setToken(token));
       navigate("/profile");
       dispatch(setSuccessMessage({ message: "Login Successful" }));
-      dispatch(setProfile({
-        id,
-        firstName,
-        lastName,
-        language,
-        carColor,
-        carModel,
-        carYear,
-        driverLicense,
-        nationalId,
-        licensePlate,
-        referralCode,
-        ghanaCard,
-        licenseFront,
-        profilePhoto,
-        proofOfInsurance,
-        roadworthinessSticker,
-      }))
+      dispatch(
+        setProfile({
+          id,
+          firstName,
+          lastName,
+          language,
+          carColor,
+          carModel,
+          carYear,
+          driverLicense,
+          nationalId,
+          licensePlate,
+          referralCode,
+          ghanaCard,
+          licenseFront,
+          profilePhoto,
+          proofOfInsurance,
+          roadworthinessSticker,
+        })
+      );
       dispatch(setErrorMessage({}));
     } catch (err) {
       dispatch(setErrorMessage({ message: err.response.data.message }));
@@ -158,7 +160,7 @@ function Login() {
                   />
                 </div>
 
-                <div className="form-floating mb-3 mt-3">
+                <div className="form-floating my-3">
                   <Field
                     name="password"
                     type="password"
@@ -205,7 +207,7 @@ function Login() {
                 </legend>
 
                 {/* Email */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="email"
                     type="email"
@@ -228,7 +230,7 @@ function Login() {
                 </div>
 
                 {/* Contact */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="contact"
                     type="contact"
@@ -251,7 +253,7 @@ function Login() {
                 </div>
 
                 {/* City */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="city"
                     type="city"
@@ -274,7 +276,7 @@ function Login() {
                 </div>
 
                 {/* First Name */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="firstName"
                     type="firstName"
@@ -297,7 +299,7 @@ function Login() {
                 </div>
 
                 {/* Last Name */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="lastName"
                     type="lastName"
@@ -320,12 +322,12 @@ function Login() {
                 </div>
 
                 {/* Language */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="language"
                     id="language"
                     as="select"
-                    className="form-select fs-5 p-3 bg-light-50 border border-0"
+                    className="form-select fs-5 p-3 border border-1"
                   >
                     <option value="">Select Language</option>
                     {languages.map((language) => (
@@ -342,12 +344,12 @@ function Login() {
                 </div>
 
                 {/* Referral Code */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="referralCode"
                     id="referralCode"
                     type="text"
-                    className="form-control fs-5 p-3 bg-light-50 border border-0"
+                    className="form-control fs-5 p-3 bg-light-50 border border-1"
                     placeholder="12356ffg"
                   />
                   <label
@@ -361,12 +363,12 @@ function Login() {
                 </div>
 
                 {/* Car Year */}
-                <div className="col-4 mb-4 mt-4">
+                <div className="col-4 my-3">
                   <Field
                     name="carYear"
                     id="carYear"
                     as="select"
-                    className="form-select fs-5 p-3 bg-light-50 border border-0"
+                    className="form-select fs-5 p-3 border border-1"
                   >
                     <option value="">Select Car Year</option>
                     {carYears.map((year) => (
@@ -383,12 +385,12 @@ function Login() {
                 </div>
 
                 {/* Car Model */}
-                <div className="col-4 mb-4 mt-4">
+                <div className="col-4 my-3">
                   <Field
                     name="carModel"
                     id="carModel"
                     as="select"
-                    className="form-select fs-5 p-3 bg-light-50 border border-0"
+                    className="form-select fs-5 p-3 border border-1"
                   >
                     <option value="">Select Manufacturer and Model</option>
                     {carModels.map((car) => (
@@ -412,7 +414,7 @@ function Login() {
                 </div>
 
                 {/* License Plate */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="licensePlate"
                     type="licensePlate"
@@ -435,12 +437,12 @@ function Login() {
                 </div>
 
                 {/* Vehicle Color */}
-                <div className="col-4 mb-4 mt-4">
+                <div className="col-4 my-3">
                   <Field
                     name="carColor"
                     id="carColor"
                     as="select"
-                    className="form-select fs-5 p-3 bg-light-50 border border-0"
+                    className="form-select fs-5 p-3 bg-light-50  border border-1"
                   >
                     <option value="">Select Vehicle Color</option>
                     {colors.map((color) => (
@@ -457,7 +459,7 @@ function Login() {
                 </div>
 
                 {/* National ID */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="nationalId"
                     type="nationalId"
@@ -480,7 +482,7 @@ function Login() {
                 </div>
 
                 {/* Driver License */}
-                <div className="col-4 form-floating mb-3 mt-3">
+                <div className="col-4 form-floating my-3">
                   <Field
                     name="driverLicense"
                     type="driverLicense"
@@ -503,10 +505,15 @@ function Login() {
                 </div>
 
                 {/* Image Uploads */}
-                <div className="text-center col-12 fs-5">Image Uploads</div>
+                <Typography
+                  variant="h3"
+                  sx={{ textAlign: "center", margin: "20px 0 40px 0" }}
+                >
+                  Image Uploads
+                </Typography>
 
                 {/* Driver Profile */}
-                <div className="col-4 mb-5 mt-4">
+                <div className="col-4 my-2">
                   <div className="d-flex align-items-center justify-content-between">
                     <label htmlFor="profilePhoto" className="form-label fs-4">
                       Driver's profile photo
@@ -522,12 +529,12 @@ function Login() {
                     onChange={async (e) => {
                       setProfilePhoto(await convertBase64(e.target.files[0]));
                     }}
-                    className="form-control fs-5 bg-light-50 border border-0"
+                    className="form-control fs-3  border border-1"
                   />
                 </div>
 
                 {/* Driver's License Front */}
-                <div className="col-4 mb-5 mt-5">
+                <div className="col-4 my-2">
                   <div className="d-flex align-items-center justify-content-between">
                     <label htmlFor="licenseFront" className="form-label fs-4">
                       Driver's License Front
@@ -544,12 +551,12 @@ function Login() {
                     onChange={async (e) => {
                       setLicenseFront(await convertBase64(e.target.files[0]));
                     }}
-                    className="form-control fs-5 bg-light-50 border border-0"
+                    className="form-control fs-3  border border-1"
                   />
                 </div>
 
                 {/* Proof of Insurance */}
-                <div className="col-4 mb-5 mt-5">
+                <div className="col-4 my-2">
                   <div className="d-flex align-items-center justify-content-between">
                     <label
                       htmlFor="proofOfInsurance"
@@ -570,12 +577,12 @@ function Login() {
                         await convertBase64(e.target.files[0])
                       );
                     }}
-                    className="form-control fs-5 bg-light-50 border border-0"
+                    className="form-control fs-3  border border-1"
                   />
                 </div>
 
                 {/* Roadworthiness Sticker */}
-                <div className="col-4 mb-5 mt-5">
+                <div className="col-4 my-2">
                   <div className="d-flex align-items-center justify-content-between">
                     <label
                       htmlFor="roadworthinessSticker"
@@ -597,12 +604,12 @@ function Login() {
                         await convertBase64(e.target.files[0])
                       );
                     }}
-                    className="form-control fs-5 bg-light-50 border border-0"
+                    className="form-control fs-3  border border-1"
                   />
                 </div>
 
                 {/* Ghana Card */}
-                <div className="col-4 mb-5 mt-5">
+                <div className="col-4 my-2">
                   <div className="d-flex align-items-center justify-content-between">
                     <label for="ghanaCard" className="form-label fs-4">
                       Ghana Card
@@ -617,10 +624,11 @@ function Login() {
                     onChange={async (e) => {
                       setGhanaCard(await convertBase64(e.target.files[0]));
                     }}
-                    className="form-control fs-5 bg-light-50 border border-0"
+                    className="form-control fs-3  border border-1"
                   />
                 </div>
-
+                
+                <Divider sx={{ margin: "40px 0" }} />
                 {/* Button */}
                 <div className="col-12 d-grid mt-3 d-flex justify-content-center">
                   <button type="submit" className="col-2 btn btn-primary fs-4">

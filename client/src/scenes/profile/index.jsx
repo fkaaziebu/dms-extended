@@ -25,7 +25,7 @@ function Profile() {
           type="text"
           value={userInfo.firstName}
           id="firstName"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -43,7 +43,7 @@ function Profile() {
           type="text"
           value={userInfo.lastName}
           id="lastName"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -61,7 +61,7 @@ function Profile() {
           type="text"
           value={userInfo.contact}
           id="contact"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -77,9 +77,9 @@ function Profile() {
         </div>
         <input
           type="text"
-          value="John Doe"
+          value={userInfo.firstName + " " + userInfo.lastName}
           id="name"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -103,9 +103,9 @@ function Profile() {
         </div>
         <input
           type="text"
-          value="RIA-31031984-11937"
+          value={userInfo.driverLicense}
           id="reference"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -123,7 +123,7 @@ function Profile() {
           type="text"
           value="21.11.2024"
           id="expiration"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -147,9 +147,9 @@ function Profile() {
         </div>
         <input
           type="text"
-          value="Hyundai Sonata"
+          value={userInfo.carModel}
           id="model"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -165,9 +165,9 @@ function Profile() {
         </div>
         <input
           type="text"
-          value="2013"
+          value={userInfo.carYear}
           id="year"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -183,9 +183,9 @@ function Profile() {
         </div>
         <input
           type="plate"
-          value="GW 3766-20"
+          value={userInfo.licensePlate}
           id="plate"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -212,7 +212,7 @@ function Profile() {
           type="text"
           value=""
           id="companyName"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -230,7 +230,7 @@ function Profile() {
           type="text"
           value=""
           id="companyEmail"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -248,7 +248,7 @@ function Profile() {
           type="text"
           value="NO 22 OSOUN STREET"
           id="address"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -266,7 +266,7 @@ function Profile() {
           type="text"
           value=""
           id="regCode"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
@@ -284,7 +284,7 @@ function Profile() {
           type="text"
           value=""
           id="vat"
-          className="form-control fs-5 bg-light-50 border border-0"
+          className="form-control fs-3 bg-light-50 border border-0"
           disabled
         />
         <p className="mt-3 ms-2">
